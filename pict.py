@@ -5,7 +5,7 @@ import numpy as np
 
 def pict(update: Update, context: CallbackContext):
     msg = update.message.text
-    items = msg.split()# сплитим сообщение
+    items = msg.split()# сплитим сообщение на /pict 1 2 3
     a = int(items[1])
     b = int(items[2])
     c = int(items[3])
@@ -13,9 +13,10 @@ def pict(update: Update, context: CallbackContext):
     y = np.sin(x)
     plt.plot(x, y)
     plt.savefig('saved_figure.png') #сохраняем график в файл
-    update.message.reply_text(f'sin {a}, {b}, {c}')
-    context.bot.sendPhoto(chat_id=update.message.chat_id, photo="saved_figure.png", caption="sin {a}, {b}, {c}")
-    
-
+    #update.message.reply_text(f'sin {a}, {b}, {c}')
+    photo_file = open("saved_figure.png",'rb')
+    context.bot.sendPhoto(chat_id=update.message.chat_id,
+                            photo=photo_file,
+                            caption="sin {a}, {b}, {c}")
 
 
