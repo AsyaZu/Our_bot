@@ -94,4 +94,4 @@ def layout_switch(text,arg = 'en'):
         result += buffer_list[i]
     return result
 
-print(layout_switch('ghbdtn? XTKJDTR'))
+# print(layout_switch('ghbdtn? XTKJDTR'))
