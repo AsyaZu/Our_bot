@@ -1,7 +1,9 @@
 from telegram import Update
 from telegram.ext import Updater, CommandHandler, CallbackContext
 
-def sum(update: Update, context: CallbackContext):
+def calc(update: Update, context: CallbackContext):
     msg = update.message.text
-    update.message.reply_text(f'{eval(msg)}')
+    items = msg.split()
+    a = items[1]
+    update.message.reply_text(f'{eval(a)}')
 
