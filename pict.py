@@ -11,12 +11,11 @@ def pict(update: Update, context: CallbackContext):
     c = int(items[3])
     x = np.arange(a, b, c)
     y = np.sin(x)
-
     plt.plot(x, y)
     plt.savefig('saved_figure.png') #сохраняем график в файл
-    #plt.show()
-
     update.message.reply_text(f'sin {a}, {b}, {c}')
+    context.bot.sendPhoto(chat_id=5231750444:AAFnNv0xzckgyU83M8fdU7qFgeBp5jqn8v0, photo="saved_figure.png", caption="sin {a}, {b}, {c}")
+    
 
 
 
